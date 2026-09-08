@@ -1,0 +1,23 @@
+{
+  "name": "mimic-party",
+  "version": "1.0.0",
+  "private": true,
+  "description": "🎭 MIMIC PARTY — AI Multiplayer Voice-Mimicking Party Game",
+  "scripts": {
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "dev:audio": "powershell -Command \"cd audio-service; .\\venv\\Scripts\\python -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload\"",
+    "build": "npm --prefix server run build && npm --prefix client run build",
+    "start": "npm --prefix server start"
+  },
+  "keywords": [
+    "multiplayer",
+    "ai",
+    "party-game",
+    "audio-dsp",
+    "gemini",
+    "voice-game"
+  ],
+  "author": "Antigravity",
+  "license": "MIT"
+}
