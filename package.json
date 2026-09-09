@@ -3,12 +3,22 @@
   "version": "1.0.0",
   "private": true,
   "description": "🎭 MIMIC PARTY — AI Multiplayer Voice-Mimicking Party Game",
+  "workspaces": [
+    "server",
+    "client"
+  ],
   "scripts": {
     "dev:server": "npm --prefix server run dev",
     "dev:client": "npm --prefix client run dev",
     "dev:audio": "powershell -Command \"cd audio-service; .\\venv\\Scripts\\python -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload\"",
+    "postinstall": "npm --prefix server install --include=dev && npm --prefix client install --include=dev",
+    "build:server": "npm --prefix server run build",
+    "build:client": "npm --prefix client run build",
     "build": "npm --prefix server run build && npm --prefix client run build",
     "start": "npm --prefix server start"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
   },
   "keywords": [
     "multiplayer",
